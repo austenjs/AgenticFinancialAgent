@@ -7,7 +7,7 @@ import streamlit as st
 from agents import UserProfile
 from financial_agent import FinancialAgent
 
-st.title("Portfolio Input Form")
+st.title("Agentic AI Financial Assistant")
 net_worth = st.number_input("Enter your net worth (USD):", min_value=0.0, step=100.0)
 risk_tolerance = st.slider("Risk Tolerance (1 = Low, 10 = High):", min_value=1, max_value=10)
 goal = st.selectbox("Select your investment goal:", options=["Growth", "Aggressive"])
