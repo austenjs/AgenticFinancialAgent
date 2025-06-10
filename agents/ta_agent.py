@@ -14,17 +14,17 @@ class TechnicalAgent(BaseAgent):
         score = 0
         reasons = []
 
-        if 'Close' in hist.columns and len(hist) >= 200:
+        if 'Close' in hist.columns and len(hist) >= 30:
             closes = hist['Close']
+            ma_10 = closes.iloc[-10:].mean()
             ma_20 = closes.iloc[-20:].mean()
-            ma_50 = closes.iloc[-50:].mean()
-            ma_200 = closes.iloc[-200:].mean()
+            ma_30 = closes.iloc[-30:].mean()
             curr = closes.iloc[-1]
 
-            if curr > ma_20 > ma_50 > ma_200:
+            if curr > ma_10 > ma_20 > ma_30:
                 score += 0.15
                 reasons.append("All major MAs stacked bullish")
-            elif curr < ma_20 < ma_50 < ma_200:
+            elif curr < ma_10 < ma_20 < ma_30:
                 score -= 0.15
                 reasons.append("All major MAs bearish")
 

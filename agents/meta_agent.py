@@ -27,5 +27,5 @@ class MetaDecisionAgent(BaseAgent):
             "symbol": symbol,
             "recommendation": rec,
             "combined_score": adjusted_total,
-            "details": " | ".join(explain)
+            "details": "\n".join(explain)
         }
