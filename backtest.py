@@ -16,8 +16,8 @@ if __name__ == '__main__':
         current_portfolio={'AAPL': 0.3, 'TSLA': 0.2, 'MSFT': 0.3, 'NVDA': 0.2}
     )
     symbols = list(user_profile.current_portfolio.keys())
-    start_date = "2025-05-15"
-    end_date = "2025-05-31"
+    start_date = "2025-06-01"
+    end_date = "2025-06-12"
 
     # --- Download price data ---
     prices = yf.download(symbols, start=start_date, end=end_date, interval='1d')['Close'].dropna()
